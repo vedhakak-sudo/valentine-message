@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You Said Yes 💘</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+    .love {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: pop 1.5s;
+    }
+    h1 { color: #ff4d6d; }
+    @keyframes pop {
+      from {transform: scale(0.8); opacity:0;}
+      to {transform: scale(1); opacity:1;}
+    }
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 20px;
+      animation: float 6s infinite;
+    }
+    @keyframes float {
+      0% {transform: translateY(0); opacity:1;}
+      100% {transform: translateY(-800px); opacity:0;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="love">
+  <h1>YAYYYYY 🥹❤️</h1>
+  <p>
+    You just made BUBU<br>
+    the happiest person ever.
+    <br><br>
+    This Valentine’s is officially OURS 💕
+    <br><br>
+    — Forever yours, <strong>BUBU 💖</strong>
+  </p>
+</div>
+
+<script>
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 10 + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }
+  setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
